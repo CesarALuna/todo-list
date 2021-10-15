@@ -1,6 +1,6 @@
 import './App.css'
 import Main from './components/Main'
-import Header from './components/Header'
+import Sidebar from './components/Sidebar'
 import User from './components/User'
 import AddNewTodo from './components/AddNewTodo'
 import Calendar from './components/Calendar'
@@ -13,13 +13,13 @@ import Next7Days from './components/Next7Days'
 function App() {
   return (
     <div className="App">
-      <Header>
+      <Sidebar>
         <User />
         <AddNewTodo />
         <Calendar />
         <AddNewProject />
         <Projects />
-      </Header>
+      </Sidebar>
       <Main>
         <Todos />
         <Next7Days />

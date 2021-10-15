@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 24px;
+}
+
+/*App*/
+.App {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/*Sidebar*/
+.Sidebar {
+  background-color: cyan;
+  width: 300px;
+  min-width: 210px;
+  height: 100%;
+}
+
+/*Main*/
+.Main {
+  background-image: url('./img/jesse-borovnica-VjMJmwZOs9M-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
