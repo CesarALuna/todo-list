@@ -1,9 +1,16 @@
 import React from 'react'
+import logo from '../img/logo.svg'
 
 function User() {
   return (
     <div className="User">
-      <div></div>
+      <div className="logo">
+        <img src={logo} alt="logo" />
+      </div>
+      <div className="info">
+        <p>Taskr</p>
+        <a href="#">Logout</a>
+      </div>
     </div>
   )
 }
