@@ -100,7 +100,7 @@
   border: none;
   border-radius: 3px;
   font-size: 1rem;
-  background: #6259b8;
+  background: #4839ca;
   color: #f9fbff;
   font-weight: bold;
   cursor: pointer;
@@ -161,7 +161,7 @@
 }
 
 .AddNewTodo form .pick-project .projects .project {
-  background: #6259b8;
+  background: #4839ca;
   color: #f9fbff;
   border-radius: 5px;
   padding: 8px;
@@ -195,4 +195,53 @@
   font-size: 1.1rem;
   border: none;
   border-radius: 0 0 4px 4px;
+}
+
+/* Calendar */
+.Calendar {
+  padding: 0.3rem;
+  border-bottom: 1px solid #505050;
+}
+
+.Calendar .header {
+  display: flex;
+  align-items: center;
+}
+
+.Calendar .header .title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.Calendar .header .title p {
+  margin-left: 9px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.Calendar .header .btns span {
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Calendar .header .btns span:hover {
+  background-color: #c3c3c3;
+  transition: all 0.3s ease-in-out;
+}
+
+.Calendar .items {
+  padding: 0.3rem;
+}
+
+.Calendar .items .item {
+  padding: 2px;
+  margin: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
