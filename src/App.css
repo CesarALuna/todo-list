@@ -41,7 +41,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.7rem;
-  border: 1px solid #ebebeb;
+  border-bottom: 1px solid #505050;
 }
 
 .User .logo img {
@@ -54,7 +54,7 @@
 
 .User .info p {
   font-family: 'Vidaloka', cursive;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
 }
 
 .User .info a {
@@ -62,4 +62,52 @@
   display: flex;
   justify-content: flex-end;
   font-size: 0.7rem;
+}
+
+/* Modal */
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.Modal .container {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  background: red;
+}
+
+/* AddNewTodo */
+.AddNewTodo {
+  /* border-bottom: 1px solid #505050; */
+  padding-bottom: 1rem;
+}
+
+.AddNewTodo .btn {
+  padding: 0.5rem;
+  width: 100%;
+  height: 70px;
+  font-size: 0.8rem;
+}
+
+.AddNewTodo .btn button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  background: #6259b8;
+  color: #f9fbff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.AddNewTodo .btn button:hover {
+  filter: brightness(1.2);
+  transition: all 0.3 linear;
 }
