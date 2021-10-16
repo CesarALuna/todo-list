@@ -79,7 +79,6 @@
   top: 25%;
   left: 50%;
   transform: translate(-50%, -25%);
-  background: red;
 }
 
 /* AddNewTodo */
@@ -110,4 +109,90 @@
 .AddNewTodo .btn button:hover {
   filter: brightness(1.2);
   transition: all 0.3 linear;
+}
+
+/* AddNewTodo form */
+.AddNewTodo form {
+  padding: 1rem;
+  padding-bottom: calc(1rem + 40px);
+  width: 500px;
+  background: #f9fbff;
+  border-radius: 10px;
+}
+
+.AddNewTodo form .text input {
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.AddNewTodo form .remind {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.AddNewTodo form p {
+  margin-left: 10px;
+}
+
+.AddNewTodo form .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.AddNewTodo form .pick-day {
+  padding: 0.7rem 0.7rem 0rem 0.7rem;
+}
+.AddNewTodo form .pick-time {
+  padding: 0.7rem 0.7rem 0rem 0.7rem;
+}
+
+.AddNewTodo form .pick-project {
+  padding: 0.5rem;
+}
+
+.AddNewTodo form .pick-project .projects {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.AddNewTodo form .pick-project .projects .project {
+  background: #6259b8;
+  color: #f9fbff;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.AddNewTodo form .pick-project .projects .active {
+  background: #bbb5f1;
+  color: black;
+}
+
+.AddNewTodo form .cancel {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.AddNewTodo form .confirm {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.AddNewTodo form .confirm button {
+  width: 100%;
+  height: 40px;
+  background: #0080ff;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0 0 4px 4px;
 }
