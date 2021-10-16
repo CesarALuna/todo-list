@@ -17,7 +17,6 @@ function App() {
         <User />
         <AddNewTodo />
         <Calendar />
-        <AddNewProject />
         <Projects />
       </Sidebar>
       <Main>

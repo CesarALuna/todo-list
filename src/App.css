@@ -20,10 +20,13 @@
 
 /*Sidebar*/
 .Sidebar {
+  z-index: 10000;
   background-color: #f9fbff;
-  width: 300px;
+  width: 320px;
   min-width: 210px;
   height: 100%;
+  border-right: 1px solid #808080;
+  box-shadow: 5px 0px 8px rgba(0, 0, 0, 0.5);
 }
 
 /*Main*/
@@ -41,7 +44,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.7rem;
-  border-bottom: 1px solid #505050;
+  /* border-bottom: 1px solid #505050; */
 }
 
 .User .logo img {
@@ -177,8 +180,8 @@
 
 .AddNewTodo form .cancel {
   position: absolute;
-  top: 0;
-  right: 5px;
+  top: 8px;
+  right: 12px;
 }
 
 .AddNewTodo form .confirm {
@@ -216,8 +219,8 @@
 }
 
 .Calendar .header .title p {
-  margin-left: 9px;
-  font-size: 1.1rem;
+  margin-left: 5px;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -245,4 +248,108 @@
   margin: 5px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+/* Projects */
+.Projects {
+  padding: 0.3rem;
+  border-bottom: 1px solid #505050;
+}
+
+.Projects .header {
+  display: flex;
+  align-items: center;
+}
+
+.Projects .header .title {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.Projects .header .title p {
+  margin-left: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.Projects .header .btns {
+  display: flex;
+  align-items: center;
+}
+
+.Projects .header .btns span {
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Projects .header .btns span:hover {
+  background-color: #c3c3c3;
+  transition: all 0.3s ease-in-out;
+}
+
+.Projects .items {
+  padding: 0.3rem;
+}
+
+/* Project */
+.Project {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  font-size: 1rem;
+}
+
+.Project .name {
+  cursor: pointer;
+  word-break: break-all;
+}
+
+.Project .btns {
+  display: flex;
+  align-items: center;
+}
+
+.Project .btns .total-todos {
+  position: absolute;
+  right: 0;
+  background: #c2c2c2;
+  width: 25px;
+  height: 25px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.Project .btns .edit-delete {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+
+.Project .btns .edit-delete span {
+  border-radius: 50%;
+  content: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease-in-out;
+}
+
+.Project .btns .edit-delete span.edit:hover {
+  background: #83eb9f;
+}
+
+.Project .btns .edit-delete span.delete:hover {
+  background: #ee8d8d;
 }

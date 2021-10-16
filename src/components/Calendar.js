@@ -7,12 +7,12 @@ function Calendar() {
     <div className="Calendar">
       <div className="header">
         <div className="title">
-          <BsCalendarDate size="32" />
+          <BsCalendarDate size="22" />
           <p>Calendar</p>
         </div>
         <div className="btns">
           <span>
-            <BsCaretUp size="30" />
+            <BsCaretUp size="22" />
           </span>
         </div>
       </div>

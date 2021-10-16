@@ -67,7 +67,7 @@ function AddNewTodo() {
               </div>
             </div>
             <div className="cancel" onClick={() => setShowModal(false)}>
-              <GiCancel size="40" color="red" />
+              <GiCancel size="30" color="red" />
             </div>
             <div className="confirm">
               <button>+ Add to do</button>
