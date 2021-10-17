@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Project from './Project'
 import AddNewProject from './AddNewProject'
-import RenameProject from './RenameProject'
 import { BsPalette, BsCaretUp } from 'react-icons/bs'
-import { AiOutlineEdit, AiOutlineFolderAdd } from 'react-icons/ai'
+import { AiOutlineEdit } from 'react-icons/ai'
 
 function Projects() {
   const [showMenu, setShowMenu] = useState(true)
