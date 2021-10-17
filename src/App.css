@@ -406,3 +406,31 @@
   border: none;
   border-radius: 0 0 5px 0;
 }
+
+/* Todos */
+.Todos {
+  width: 450px;
+  height: 80%;
+  background: #fff;
+
+  position: absolute;
+  bottom: 40px;
+  left: 320px;
+
+  border-radius: 5px;
+  opacity: 0.8;
+
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.Todos .selected-project {
+  margin: 1rem 0;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+.Todos .todos {
+  overflow-y: auto;
+}
