@@ -417,6 +417,7 @@
   bottom: 90px;
   left: 320px;
 
+  box-shadow: 0 0 5px black;
   border-radius: 5px;
   opacity: 0.9;
 
@@ -489,6 +490,7 @@
   width: 450px;
 
   border-radius: 5px;
+  box-shadow: 0 0 5px black;
 
   opacity: 0.9;
   padding: 0 0.5rem 0.5rem 0.5rem;
