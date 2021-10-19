@@ -19,9 +19,9 @@ function App() {
         <Projects />
       </Sidebar>
       <Main>
-        <Todos />
-        <Next7Days />
         <EditTodo />
+
+        <Todos />
       </Main>
     </div>
   )

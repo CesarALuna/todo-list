@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
+import TodoForm from './TodoForm'
 
-function EditTodos() {
-  return <div className="EditTodos">EditTodos</div>
+function EditTodo() {
+  const [text, setText] = useState()
+  const [day, setDay] = useState()
+  const [time, setTime] = useState()
+
+  const projects = [
+    { id: 1, name: 'personal', numOfTodos: 0 },
+    { id: 2, name: 'work', numOfTodos: 4 },
+    { id: 3, name: 'cats', numOfTodos: 2 },
+  ]
+
+  function handleSubmit(e) {}
+
+  return (
+    <div className="EditTodo">
+      <div className="header">Edit Todo</div>
+      <div className="container">
+        <TodoForm
+          handleSubmit={handleSubmit}
+          text={text}
+          setText={setText}
+          day={day}
+          setDay={setDay}
+          time={time}
+          setTime={setTime}
+          projects={projects}
+        />
+      </div>
+    </div>
+  )
 }
 
-export default EditTodos
+export default EditTodo

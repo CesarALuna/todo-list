@@ -117,55 +117,55 @@
 }
 
 /* AddNewTodo form */
-.AddNewTodo form {
+.TodoForm {
   padding: 1rem;
   padding-bottom: calc(1rem + 40px);
-  width: 500px;
+  width: 100%;
   background: #f9fbff;
   border-radius: 10px;
 }
 
-.AddNewTodo form .text input {
+.TodoForm .text input {
   padding: 1rem;
   width: 100%;
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
 }
 
-.AddNewTodo form .remind {
+.TodoForm .remind {
   display: flex;
   align-items: center;
   padding: 0.5rem;
 }
 
-.AddNewTodo form p {
+.TodoForm p {
   margin-left: 10px;
 }
 
-.AddNewTodo form .title {
+.TodoForm .title {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.AddNewTodo form .pick-day {
+.TodoForm .pick-day {
   padding: 0.7rem 0.7rem 0rem 0.7rem;
 }
-.AddNewTodo form .pick-time {
+.TodoForm .pick-time {
   padding: 0.7rem 0.7rem 0rem 0.7rem;
 }
 
-.AddNewTodo form .pick-project {
+.TodoForm .pick-project {
   padding: 0.5rem;
 }
 
-.AddNewTodo form .pick-project .projects {
+.TodoForm .pick-project .projects {
   display: flex;
   flex-wrap: wrap;
   padding: 0.5rem 0.5rem 0 0.5rem;
 }
 
-.AddNewTodo form .pick-project .projects .project {
+.TodoForm .pick-project .projects .project {
   background: #4839ca;
   color: #f9fbff;
   border-radius: 5px;
@@ -174,25 +174,25 @@
   cursor: pointer;
 }
 
-.AddNewTodo form .pick-project .projects .active {
+.TodoForm .pick-project .projects .active {
   background: #bbb5f1;
   color: black;
 }
 
-.AddNewTodo form .cancel {
+.TodoForm .cancel {
   position: absolute;
   top: 8px;
   right: 12px;
 }
 
-.AddNewTodo form .confirm {
+.TodoForm .confirm {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 }
 
-.AddNewTodo form .confirm button {
+.TodoForm .confirm button {
   width: 100%;
   height: 40px;
   background: #0080ff;
@@ -414,7 +414,7 @@
   background: #fff;
 
   position: absolute;
-  bottom: 40px;
+  bottom: 90px;
   left: 320px;
 
   border-radius: 5px;
@@ -475,4 +475,29 @@
 
 .Todo .todo-container .add-to-next-day {
   margin-right: 10px;
+}
+
+/* EditTodo */
+.EditTodo {
+  position: absolute;
+  bottom: 90px;
+  left: calc(40px + 450px + 320px);
+
+  background-color: #fff;
+
+  height: 80%;
+  width: 450px;
+
+  border-radius: 5px;
+
+  opacity: 0.9;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.EditTodo .header {
+  margin: 1rem 0;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #c2c2c2;
 }
