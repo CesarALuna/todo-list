@@ -16,6 +16,8 @@ function TodoForm({
   day,
   setDay,
   time,
+  todoProject,
+  setTodoProject,
   setTime,
   projects,
   showButtons = false,
@@ -58,11 +60,23 @@ function TodoForm({
             <p>Choose a project</p>
           </div>
           <div className="projects">
-            {projects.map((project) => (
-              <div className="project" key={project.id}>
-                {project.name}
+            {projects.length > 0 ? (
+              projects.map((project) => (
+                <div
+                  className={`project ${
+                    todoProject === project.name ? 'active' : ''
+                  }`}
+                  onClick={() => setTodoProject(project.name)}
+                  key={project.id}
+                >
+                  {project.name}
+                </div>
+              ))
+            ) : (
+              <div style={{ color: 'red', fontStyle: 'italic' }}>
+                Please add a project
               </div>
-            ))}
+            )}
           </div>
         </div>
         {showButtons && (
