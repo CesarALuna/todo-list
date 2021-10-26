@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Project from './Project'
 import AddNewProject from './AddNewProject'
 import { BsPalette, BsCaretUp } from 'react-icons/bs'
 import { AiOutlineEdit } from 'react-icons/ai'
+import { TodoContext } from '../context'
 
 function Projects() {
   const [showMenu, setShowMenu] = useState(true)
   const [edit, setEdit] = useState(false)
   const pencilColor = edit ? '#1ec94c' : '#000000'
 
-  const projects = [
-    { id: 1, name: 'personal', numOfTodos: 0 },
-    { id: 2, name: 'work', numOfTodos: 4 },
-    { id: 3, name: 'cats', numOfTodos: 2 },
-  ]
+  // context
+  const { projects } = useContext(TodoContext)
 
   return (
     <div className="Projects">

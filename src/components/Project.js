@@ -21,10 +21,10 @@ function Project({ project, edit }) {
         {edit ? (
           <div className="edit-delete">
             <span className="edit" onClick={() => setShowModal(true)}>
-              <AiOutlineEdit size="22" />
+              <AiOutlineEdit size="20" />
             </span>
             <span className="delete">
-              <GiCancel size="22" />
+              <GiCancel size="20" />
             </span>
           </div>
         ) : project.numOfTodos === 0 ? (
@@ -34,7 +34,7 @@ function Project({ project, edit }) {
         )}
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        <RenameProject setShowModal={setShowModal} project={project} />
+        <RenameProject project={project} setShowModal={setShowModal} />
       </Modal>
     </div>
   )
