@@ -2,10 +2,14 @@ import React, { useState, useContext, useEffect } from 'react'
 import Modal from './Modal'
 import TodoForm from './TodoForm'
 import { TodoContext } from '../context'
+import { calendarItems } from './constants'
+import firebase from '../firebase'
+import moment from 'moment'
+import randomcolor from 'randomcolor'
 
 function AddNewTodo() {
   // Context
-  const { selectedProject } = useContext(TodoContext)
+  const { projects, selectedProject } = useContext(TodoContext)
 
   // State
   const [showModal, setShowModal] = useState(false)
@@ -14,13 +18,28 @@ function AddNewTodo() {
   const [time, setTime] = useState(new Date())
   const [todoProject, setTodoProject] = useState(selectedProject)
 
-  const projects = [
-    { id: 1, name: 'personal', numOfTodos: 0 },
-    { id: 2, name: 'work', numOfTodos: 4 },
-    { id: 3, name: 'cats', numOfTodos: 2 },
-  ]
+  function handleSubmit(e) {
+    e.preventDefault()
 
-  function handleSubmit(e) {}
+    if (text && !calendarItems.includes(todoProject)) {
+      firebase
+        .firestore()
+        .collection('todos')
+        .add({
+          text: text,
+          date: moment(day).format('MMM Do YYYY'),
+          day: moment(day).format('d'),
+          time: moment(time).format('hh:mm A'),
+          projectName: todoProject,
+          checked: false,
+          color: randomcolor(),
+        })
+      setShowModal(false)
+      setText('')
+      setTime(new Date())
+      setDay(new Date())
+    }
+  }
 
   useEffect(() => {
     setTodoProject(selectedProject)

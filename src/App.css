@@ -20,7 +20,6 @@
 
 /*Sidebar*/
 .Sidebar {
-  z-index: 10000;
   background-color: #f9fbff;
   width: 320px;
   min-width: 210px;
@@ -70,7 +69,7 @@
 
 /* Modal */
 .Modal {
-  z-index: 9999999;
+  z-index: 99;
   position: fixed;
   top: 0;
   left: 0;

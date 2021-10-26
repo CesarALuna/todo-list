@@ -49,7 +49,7 @@ export function useProjects(todos) {
       })
 
     return () => unsubscribe()
-  })
+  }, [todos])
 
   return projects
 }
