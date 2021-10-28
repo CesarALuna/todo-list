@@ -8,7 +8,7 @@ function User() {
         <img src={logo} alt="logo" />
       </div>
       <div className="info">
-        <p>Taskr</p>
+        <p>Tasky</p>
         <a href="#">Logout</a>
       </div>
     </div>
