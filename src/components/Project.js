@@ -4,13 +4,40 @@ import RenameProject from './RenameProject'
 import { TodoContext } from '../context'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { GiCancel } from 'react-icons/gi'
+import firebase from '../firebase'
 
 function Project({ project, edit }) {
   //CONTEXT
-  const { setSelectedProject } = useContext(TodoContext)
+  const { defaultProject, selectedProject, setSelectedProject } =
+    useContext(TodoContext)
 
   // STATE
   const [showModal, setShowModal] = useState(false)
+
+  const deleteProject = (project) => {
+    firebase
+      .firestore()
+      .collection('projects')
+      .doc(project.id)
+      .delete()
+      .then(() => {
+        firebase
+          .firestore()
+          .collection('todos')
+          .where('projectName', '==', project.name)
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              doc.ref.delete()
+            })
+          })
+      })
+      .then(() => {
+        if (selectedProject === project.name) {
+          setSelectedProject(defaultProject)
+        }
+      })
+  }
 
   return (
     <div className="Project">
@@ -23,7 +50,7 @@ function Project({ project, edit }) {
             <span className="edit" onClick={() => setShowModal(true)}>
               <AiOutlineEdit size="20" />
             </span>
-            <span className="delete">
+            <span className="delete" onClick={() => deleteProject(project)}>
               <GiCancel size="20" />
             </span>
           </div>
