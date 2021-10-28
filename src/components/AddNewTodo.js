@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import Modal from './Modal'
 import TodoForm from './TodoForm'
 import { TodoContext } from '../context'
-import { calendarItems } from './constants'
+import { calendarItems } from '../constants'
 import firebase from '../firebase'
 import moment from 'moment'
 import randomcolor from 'randomcolor'
@@ -27,7 +27,7 @@ function AddNewTodo() {
         .collection('todos')
         .add({
           text: text,
-          date: moment(day).format('MMM Do YYYY'),
+          date: moment(day).format('MM/DD/YYYY'),
           day: moment(day).format('d'),
           time: moment(time).format('hh:mm A'),
           projectName: todoProject,
@@ -36,8 +36,8 @@ function AddNewTodo() {
         })
       setShowModal(false)
       setText('')
-      setTime(new Date())
       setDay(new Date())
+      setTime(new Date())
     }
   }
 

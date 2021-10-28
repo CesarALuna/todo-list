@@ -506,17 +506,17 @@
 }
 
 /* Next7Days */
-.next7Days .day {
+.Next7Days .day {
   margin: 5px;
   display: flex;
 }
 
-.next7Days .day .name {
+.Next7Days .day .name {
   font-weight: bold;
   font-size: 1rem;
 }
 
-.next7Days .day .total-todos {
+.Next7Days .day .total-todos {
   margin-left: 8px;
   font-size: 0.9rem;
 }

@@ -1,12 +1,13 @@
+import moment from 'moment'
 import React, { useEffect, useState } from 'react'
 import Todo from './Todo'
-import moment from 'moment'
 
 function Next7Days({ todos }) {
   const [weekTodos, setWeekTodos] = useState([])
 
   useEffect(() => {
     const days = ['0', '1', '2', '3', '4', '5', '6']
+
     const sortedTodosByDay = days.map((day) => {
       return {
         todos: todos.filter((todo) => todo.day === day),
@@ -15,6 +16,7 @@ function Next7Days({ todos }) {
     })
 
     const today = parseInt(moment().format('d'))
+
     const arrangeDays = sortedTodosByDay
       .slice(today)
       .concat(sortedTodosByDay.slice(0, today))
@@ -23,7 +25,7 @@ function Next7Days({ todos }) {
   }, [todos])
 
   return (
-    <div className="next7Days">
+    <div className="Next7Days">
       {weekTodos.map((day) => (
         <div key={day.number}>
           <div className="day">

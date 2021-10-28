@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { TodoContext } from '../context'
 import { BsCalendarDate, BsCaretUp } from 'react-icons/bs'
-import { calendarItems } from './constants'
+import { calendarItems } from '../constants'
 
 function Calendar() {
   // CONTEXT
