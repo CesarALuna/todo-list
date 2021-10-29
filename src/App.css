@@ -55,8 +55,8 @@
   background: repeating-conic-gradient(
     from 270deg at 110% 66%,
     #ff70a6 0%,
-    #70d6ff 13%,
-    #009a17 100%
+    #70a6ff 13%,
+    #339a33 100%
   );
 }
 
@@ -428,6 +428,7 @@
   opacity: 0.9;
 
   padding: 0 0.5rem 0.5rem 0.5rem;
+  overflow-y: auto;
 }
 
 .Todos .selected-project {
