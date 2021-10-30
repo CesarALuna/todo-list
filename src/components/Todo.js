@@ -1,16 +1,28 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import firebase from '../firebase'
+import { TodoContext } from '../context'
 import {
   BsCheckCircleFill,
   BsCircle,
   BsTrash,
   BsArrowClockwise,
-  BsCheckCircle,
 } from 'react-icons/bs'
 import moment from 'moment'
 
 function Todo({ todo }) {
+  // state
   const [hover, setHover] = useState(false)
+
+  // context
+  const { selectedTodo, setSelectedTodo } = useContext(TodoContext)
+
+  const handleDelete = (todo) => {
+    deleteTodo(todo)
+
+    if (selectedTodo === todo) {
+      setSelectedTodo(undefined)
+    }
+  }
 
   const deleteTodo = (todo) => {
     firebase.firestore().collection('todos').doc(todo.id).delete()
@@ -62,7 +74,7 @@ function Todo({ todo }) {
             </span>
           )}
         </div>
-        <div className="text">
+        <div className="text" onClick={() => setSelectedTodo(todo)}>
           <p style={{ color: todo.checked ? '#b1b1b1' : '#000000' }}>
             {todo.text}
           </p>
@@ -78,7 +90,7 @@ function Todo({ todo }) {
             </span>
           )}
         </div>
-        <div className="delete-todo" onClick={() => deleteTodo(todo)}>
+        <div className="delete-todo" onClick={() => handleDelete(todo)}>
           {(hover || todo.checked) && (
             <span>
               <BsTrash />

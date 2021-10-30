@@ -8,23 +8,25 @@ function AddNewProject() {
   const [showModal, setShowModal] = useState(false)
   const [projectName, setProjectName] = useState('')
 
-  const handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault()
-    if (projectName) {
-      const ref = firebase.firestore().collection('projects')
 
-      ref
+    if (projectName) {
+      const projectsRef = firebase.firestore().collection('projects')
+
+      projectsRef
         .where('name', '==', projectName)
         .get()
         .then((querySnapshot) => {
           if (querySnapshot.empty) {
-            ref.add({
+            projectsRef.add({
               name: projectName,
             })
           } else {
-            alert('Project already exists')
+            alert('Project already exists!')
           }
         })
+
       setShowModal(false)
       setProjectName('')
     }
