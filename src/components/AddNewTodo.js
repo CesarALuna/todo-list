@@ -32,7 +32,7 @@ function AddNewTodo() {
           time: moment(time).format('hh:mm A'),
           projectName: todoProject,
           checked: false,
-          color: randomcolor(),
+          color: randomcolor({ luminosity: 'dark' }),
         })
       setShowModal(false)
       setText('')

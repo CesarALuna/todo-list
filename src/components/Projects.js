@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react'
 import Project from './Project'
 import AddNewProject from './AddNewProject'
-import { BsPalette, BsCaretUp } from 'react-icons/bs'
+import { BsPalette, BsCaretRightFill } from 'react-icons/bs'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { TodoContext } from '../context'
+import { useSpring, animated } from 'react-spring'
 
 function Projects() {
   const [showMenu, setShowMenu] = useState(true)
@@ -12,6 +13,17 @@ function Projects() {
 
   // context
   const { projects } = useContext(TodoContext)
+
+  // ANIMATION
+  const spin = useSpring({
+    transform: showMenu ? 'rotate(90deg)' : 'rotate(0deg)',
+    config: { friction: 25 },
+  })
+
+  const menuAnimation = useSpring({
+    display: showMenu ? 'block' : 'none',
+    lineHeight: showMenu ? 1 : 0,
+  })
 
   return (
     <div className="Projects">
@@ -27,16 +39,20 @@ function Projects() {
             </span>
           )}
           <AddNewProject />
-          <span className="arrow">
-            <BsCaretUp size="22" />
-          </span>
+          <animated.span
+            className="arrow"
+            style={spin}
+            onClick={() => setShowMenu(!showMenu)}
+          >
+            <BsCaretRightFill size="22" />
+          </animated.span>
         </div>
       </div>
-      <div className="items">
+      <animated.div style={menuAnimation} className="items">
         {projects.map((project) => (
           <Project project={project} key={project.id} edit={edit} />
         ))}
-      </div>
+      </animated.div>
     </div>
   )
 }

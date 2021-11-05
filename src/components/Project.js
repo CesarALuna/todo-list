@@ -5,6 +5,7 @@ import { TodoContext } from '../context'
 import { AiOutlineEdit } from 'react-icons/ai'
 import { GiCancel } from 'react-icons/gi'
 import firebase from '../firebase'
+import { useTransition, useSpring, animated } from 'react-spring'
 
 function Project({ project, edit }) {
   //CONTEXT
@@ -39,31 +40,47 @@ function Project({ project, edit }) {
       })
   }
 
+  // ANIMATION
+  const fadeIn = useSpring({
+    from: { marginTop: '-12px', opacity: 0 },
+    to: { marginTop: '0px', opacity: 1 },
+  })
+
+  const btnTransitions = useTransition(edit, {
+    from: { opacity: 0, right: '-20px' },
+    enter: { opacity: 1, right: '0px' },
+    leave: { opacity: 0, right: '-20px' },
+  })
+
   return (
-    <div className="Project">
+    <animated.div style={fadeIn} className="Project">
       <div className="name" onClick={() => setSelectedProject(project.name)}>
         {project.name}
       </div>
       <div className="btns">
-        {edit ? (
-          <div className="edit-delete">
-            <span className="edit" onClick={() => setShowModal(true)}>
-              <AiOutlineEdit size="20" />
-            </span>
-            <span className="delete" onClick={() => deleteProject(project)}>
-              <GiCancel size="20" />
-            </span>
-          </div>
-        ) : project.numOfTodos === 0 ? (
-          ''
-        ) : (
-          <div className="total-todos">{project.numOfTodos}</div>
+        {btnTransitions((props, editProject) =>
+          editProject ? (
+            <animated.div style={props} className="edit-delete">
+              <span className="edit" onClick={() => setShowModal(true)}>
+                <AiOutlineEdit size="20" />
+              </span>
+              <span className="delete" onClick={() => deleteProject(project)}>
+                <GiCancel size="20" />
+              </span>
+            </animated.div>
+          ) : project.numOfTodos === 0 ? (
+            ''
+          ) : (
+            <animated.div style={props} className="total-todos">
+              {project.numOfTodos}
+            </animated.div>
+          )
         )}
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
         <RenameProject project={project} setShowModal={setShowModal} />
       </Modal>
-    </div>
+    </animated.div>
   )
 }
 

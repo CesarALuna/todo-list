@@ -117,7 +117,7 @@
 
 .AddNewTodo .btn button:hover {
   filter: brightness(1.2);
-  transition: all 0.3 linear;
+  transition: background 0.3 linear;
 }
 
 /* AddNewTodo form */
@@ -243,7 +243,7 @@
 
 .Calendar .header .btns span:hover {
   background-color: #c3c3c3;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
 .Calendar .items {
@@ -297,7 +297,7 @@
 
 .Projects .header .btns span:hover {
   background-color: #c2c2c2;
-  transition: all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
 .Projects .items {
@@ -446,6 +446,12 @@
 /* Todo */
 .Todo {
   padding: 0.3rem 0.5rem;
+}
+.Todo .todo-container .check-todo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
 }
 
 .Todo .todo-container {
