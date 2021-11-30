@@ -2,7 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDYpvxwa5dKMV8IeZNvZnPuU3SECIGGUkA',
+  // apiKey: 'AIzaSyDYpvxwa5dKMV8IeZNvZnPuU3SECIGGUkA',
   authDomain: 'taskr-3817b.firebaseapp.com',
   projectId: 'taskr-3817b',
   storageBucket: 'taskr-3817b.appspot.com',
